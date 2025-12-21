@@ -9,10 +9,22 @@ export async function analyze(req, res) {
     });
   }
 
-  try {
-    const resumeFile = req.files.resume[0];
-    const jdFile = req.files.jd[0];
+  const allowedExtensions = [".docx", ".txt"];
+  // Function to check file type
+  function validateFile(file) {
+    return allowedExtensions.some(ext => file.originalname.endsWith(ext));
+  }
 
+  const resumeFile = req.files.resume[0];
+  const jdFile = req.files.jd[0];
+
+  if (!validateFile(resumeFile) || !validateFile(jdFile)) {
+    // Delete uploaded files
+    [resumeFile, jdFile].forEach(f => fs.unlinkSync(f.path));
+    return res.status(400).json({ error: "Only .docx and .txt files are allowed" });
+  }
+
+  try {
     const resumeText = await extractText(resumeFile);
     const jdText = await extractText(jdFile);
 
