@@ -1,0 +1,28 @@
+Name: John Doe
+Email: john.doe@example.com
+Phone: +1-555-1234
+
+Professional Summary:
+Experienced Java Developer with 5 years of experience in building scalable web applications. Skilled in Java, Spring Boot, Hibernate, REST APIs, and microservices architecture. Strong understanding of software development life cycle (SDLC) and Agile methodologies.
+
+Technical Skills:
+- Programming Languages: Java, SQL, JavaScript
+- Frameworks: Spring Boot, Hibernate, JUnit
+- Databases: MySQL, PostgreSQL
+- Tools: Git, Maven, Jenkins, Docker
+- Cloud: AWS (EC2, S3), Azure basics
+
+Work Experience:
+Software Engineer | TechSolutions Inc. | 2019 - Present
+- Developed and maintained Java-based web applications using Spring Boot.
+- Implemented REST APIs consumed by front-end applications.
+- Designed and optimized database schemas and queries for performance.
+- Worked in Agile teams with Jira and Confluence for project management.
+
+Junior Java Developer | CodeFactory | 2017 - 2019
+- Assisted in developing Java applications and unit tests.
+- Collaborated with senior developers on code reviews and deployments.
+- Participated in continuous integration and deployment (CI/CD) processes.
+
+Education:
+Bachelor of Science in Computer Science | XYZ University | 2013 - 2017
