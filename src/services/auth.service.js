@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export async function signupUser({ email, username, password }) {
+export async function signupUser({ email, username, password, role}) {
   const existingUser = await User.findOne({ email });
   if (existingUser) throw new Error("User already exists");
 
@@ -12,12 +12,13 @@ export async function signupUser({ email, username, password }) {
     email,
     username,
     password: hashedPassword,
+    role
   });
 
   return user;
 }
 
-export async function loginUser({ email, password }) {
+export async function loginUser({ email, password}) {
   const user = await User.findOne({ email });
   if (!user) throw new Error("Invalid credentials");
 
@@ -25,10 +26,15 @@ export async function loginUser({ email, password }) {
   if (!isMatch) throw new Error("Invalid credentials");
 
   const token = jwt.sign(
-    { id: user._id, email: user.email },
+    { id: user._id, email: user.email, role: user.role },
     process.env.JWT_SECRET,
     { expiresIn: "1h" }
-  );
+  );  
 
   return { user, token };
+}
+
+export async function clearAllData() {
+  const user = await User.deleteMany({});
+  return {"sucess": true};
 }

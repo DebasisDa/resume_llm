@@ -1,6 +1,6 @@
 import express from "express";
-import testRoutes from "./routes/test.routes.js";
-import analysisRoutes from "./routes/analysis.routes.js";
+import testRoutes from "./routes/clear.routes.js";
+import analysisRoutes from "./routes/job.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import { connectDB } from "./config/db.js";
 
