@@ -10,10 +10,10 @@ export async function testPrompt(req, res) {
   }
 
   try {
-    const response = await generateShortResponse(text);
-    const output = response.length > 50 ? response.slice(0, 50) : response;
+    //const response = await generateShortResponse(text);
+    //const output = response.length > 50 ? response.slice(0, 50) : response;
 
-    res.json({ prompt: text, response: output });
+    res.json({ prompt: text, response: "Hello" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

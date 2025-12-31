@@ -28,8 +28,8 @@ export async function analyze(req, res) {
     const resumeText = await extractText(resumeFile);
     const jdText = await extractText(jdFile);
 
-    const result = await analyzeResume(resumeText, jdText);
-    res.json(result);
+    //const result = await analyzeResume(resumeText, jdText);
+    res.json(jdText);
   } catch (err) {
     res.status(500).json({ error: err.message });
   } finally {
