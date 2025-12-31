@@ -1,0 +1,83 @@
+/* Full-page container */
+.va-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.va-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Scrollable table wrapper */
+.va-table-wrapper {
+  width: 100%;
+  height: calc(100% - 60px); /* adjust for header */
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.va-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.va-table th,
+.va-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.va-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Wider Status & Comment columns */
+.va-table th:nth-child(7),
+.va-table td:nth-child(7) { width: 250px; }
+.va-table th:nth-child(8),
+.va-table td:nth-child(8) { width: 400px; }
+
+/* Inputs & textarea full width */
+.va-table select,
+.va-table textarea {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.va-table textarea { min-height: 60px; }
+
+.va-table td textarea:focus,
+.va-table td select:focus {
+  outline: 2px solid #007bff;
+}
+
+/* Status Colors */
+.va-status-open { background-color: #10b981; color: white; font-weight: bold; }
+.va-status-rejected { background-color: #ef4444; color: white; font-weight: bold; }
+.va-status-offered { background-color: #3b82f6; color: white; font-weight: bold; }
+.va-status-interview { background-color: #f59e0b; color: white; font-weight: bold; }
+.va-status-waiting { background-color: #722ed1; color: white; font-weight: bold; }
+
+/* Resume link */
+.va-table a {
+  color: #007bff;
+  text-decoration: none;
+}
+.va-table a:hover { text-decoration: underline; }

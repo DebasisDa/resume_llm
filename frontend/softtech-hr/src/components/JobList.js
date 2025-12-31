@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { getJobs } from "../services/api";
 import { getUserRole } from "../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function JobList() {
     const [jobs, setJobs] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const token = localStorage.getItem("token");
     const role = getUserRole();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchJobs = async () => {
@@ -103,6 +105,14 @@ export default function JobList() {
 
                     <p><strong>Skills:</strong> {currentJob.skills.join(", ")}</p>
                     <p><em>Posted on: {new Date(currentJob.createdAt).toLocaleString()}</em></p>
+                    <div className="job-actions" style={{ marginBottom: "10px" }}>
+                        <button onClick={() => navigate(`/job/${currentJob._id}/new-application`)}>
+                            Apply New Application
+                        </button>
+                        <button onClick={() => navigate(`/job/${currentJob._id}/applications`)}>
+                            View Applications
+                        </button>
+                    </div>
                 </div>
             )}
 

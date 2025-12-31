@@ -8,6 +8,8 @@ import JobList from "./components/JobList";
 import PostJob from "./components/PostJob";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Header from "./components/Header";
+import ViewApplications from './components/ViewApplications';
+import NewApplication from './components/NewApplication';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/job/:jobId/applications" element={<ViewApplications />} />
+        <Route path="/job/:jobId/new-application" element={<NewApplication />} />
 
         <Route
           path="/home"

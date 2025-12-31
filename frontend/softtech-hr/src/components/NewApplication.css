@@ -1,0 +1,48 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.application-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="number"],
+.application-form textarea,
+.application-form input[type="file"] {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.application-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.application-form button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.application-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}

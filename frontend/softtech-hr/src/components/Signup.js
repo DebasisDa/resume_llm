@@ -82,7 +82,7 @@ export default function Signup() {
         <select name="role" value={form.role} onChange={handleChange}>
           <option value="HR">HR</option>
           <option value="Applicant">Applicant</option>
-          <option value="Developer">Developer</option>
+          <option value="Developer">Manager</option>
         </select>
 
         <button type="submit">Signup</button>
