@@ -14,7 +14,7 @@ export async function signup(req, res) {
             return res.status(400).json({ error: "Invalid email format" });
         }
 
-        if (password.length < 6) {
+        if (password.length < 5) {
             return res.status(400).json({ error: "Password must be at least 6 characters" });
         }
 

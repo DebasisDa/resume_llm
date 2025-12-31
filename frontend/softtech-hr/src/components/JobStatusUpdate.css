@@ -1,0 +1,16 @@
+.status-box {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.Open { background: green; }
+.Close { background: red; }
+.interview-going-on { background: orange; }
+.offered { background: blue; }
